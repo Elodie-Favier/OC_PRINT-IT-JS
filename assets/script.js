@@ -29,14 +29,16 @@ let indexBulletsPoints = bulletsPoints.length
 console.log(indexBulletsPoints)
 
 //**Ecoute des évenements click sur les fleches */
-//**let listArrow = document.querySelectorAll(".arrow img")
-//**for(let i = 0; i < listArrow.length; i++) {
-//**	let arrowClicked = listArrow[i]
-//**	arrowClicked.addEventListener("click", (event)=> {
-	//**	myArrow = event.target
-//**		console.log(`Ma flèche de ${myArrow.id}`)
-//**	})
-//**}
+//*
+//	let listArrow = document.querySelectorAll(".arrow img")
+//	for(let i = 0; i < listArrow.length; i++) {
+//	let arrowClicked = listArrow[i]
+//	arrowClicked.addEventListener("click", (event)=> {
+//			myArrow = event.target
+//			console.log(`Ma flèche de ${myArrow.id}`)
+//		})
+//	}
+
 let indexSlidesShow = 0
 indexBulletsPoints = 0
 let imageBanner = document.querySelector("#banner .banner-img")
@@ -45,6 +47,7 @@ let texteBanner = document.querySelector("#banner p")
 
 let arrowRight = document.querySelector(".arrow_right")
  arrowRight.addEventListener("click", function() {
+	//*arrowRight = arrowRightClicked
 	indexSlidesShow++
 	imageBanner.src = slides[indexSlidesShow].image,
 	texteBanner.innerHTML = slides[indexSlidesShow].tagLine,
@@ -54,6 +57,10 @@ let arrowRight = document.querySelector(".arrow_right")
 	indexBulletsPoints++
 	bulletsPoints[indexBulletsPoints].classList.add("dot_selected")
 	
+	if(slides[indexSlidesShow]=== slides[3])
+	indexSlidesShow -= 4
+	bulletsPoints[indexBulletsPoints].classList.add("dot_selected")
+		
 	
 }
 
@@ -68,26 +75,17 @@ let arrowRight = document.querySelector(".arrow_right")
 		bulletsPoints[indexBulletsPoints].classList.remove("dot_selected")
 		indexBulletsPoints--
 		bulletsPoints[indexBulletsPoints].classList.add("dot_selected")
+
 		
 	})
 
-	//*if(bulletsPoints[indexBulletsPoints] != slides[indexSlidesShow]) {
-		//*bulletsPoints[indexBulletsPoints].classList.remove("dot_selected")
-	//*}
+	
 
-
-	//*if(bulletsPoints[indexBulletsPoints] = slides[indexSlidesShow]) {
-		//*indexBulletsPoints--
-	//*bulletsPoints[indexBulletsPoints].classList.add("dot_selected")
-		
-//*	}else {
-	//*	bulletsPoints[indexBulletsPoints].classList.remove("dot_selected")
-
-	//*}
-
-
-
-
+//*	if(indexBulletsPoints = [3]){
+//*		imageBanner.src = slides[0].image,
+//*		texteBanner.innerHTML = slides[0].tagLine,
+//*		console.log("Vous êtes revenu au debut du carousel")
+//*	}
 
 
 
