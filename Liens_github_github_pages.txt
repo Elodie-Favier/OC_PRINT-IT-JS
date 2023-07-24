@@ -1,0 +1,9 @@
+Liens vers GitHub
+
+https://github.com/Elodie-Favier/OC_Print-it-JS
+
+
+
+Liens vers Github Pages du site Print-it !
+
+https://elodie-favier.github.io/OC_Print-it-JS/

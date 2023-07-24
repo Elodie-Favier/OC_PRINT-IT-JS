@@ -128,14 +128,15 @@ header {
 /* Gestion des fleches du carrousel */
 #banner .arrow {
 	position: absolute;
+	width: 70%;
+	display: flex;
+	justify-content: space-between;
 }
 #banner .arrow_left {
-    right: 650px;
-    position: relative;
+	left: 10px;
 }
 #banner .arrow_right {
-	left: 650px;
-    position: relative;
+	right: 10px;
 }
 /* Gestion des points du carrousel */
 .dots {

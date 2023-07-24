@@ -34,22 +34,30 @@ let bannerImg = document.querySelector(".banner-img");
 let bannerText = document.querySelector("#banner p");
 // console.log("bannerText");
 
+// ** Fonction pour changer la slide
+
 function changeSlideWithIndex() {
   let currentSlide = slides[indexSlides];
   // console.log(currentSlide);
   bannerImg.src = currentSlide.image;
   bannerText.innerHTML = currentSlide.tagLine;
 }
+// ** Fonction pour faire en sorte que les dots soient déselectionnées
+
 function unselectAllDots() {
   dots.forEach((dot) => {
     dot.classList.remove("dot_selected");
   });
 }
+
+// ** Fonction pour sélectionner la dot en même temps que la currentSlide
+
 function changeDotSelectedWithIndex() {
   unselectAllDots();
-
   dots[indexSlides % slides.length].classList.add("dot_selected");
 }
+
+// ** Fonction qui détaille ce qui se passe quand l'utilisateur clique à droite ou à gauche (nextSlide / previousSlide) et qui gère les deux cas particuliers
 
 function nextSlide() {
   if (indexSlides < slides.length - 1) {
@@ -60,6 +68,7 @@ function nextSlide() {
   changeSlideWithIndex();
   changeDotSelectedWithIndex();
 }
+
 function previousSlide() {
   if (indexSlides > 0) {
     indexSlides--;
@@ -69,6 +78,9 @@ function previousSlide() {
   changeSlideWithIndex();
   changeDotSelectedWithIndex();
 }
+
+// ** Reccuperation des id de chaque flèche et ajout d'un écouteur d'évenement qui applique la fonction correspondante pour faire marcher le carrousel.
+
 let next = document.getElementById("droite").addEventListener("click", () => {
   nextSlide();
 });
